@@ -10,7 +10,7 @@ cleanup() { rm -f ${TMP1} ${TMP2}; }
 # test parameters
 if [[ -z $1 || -z $2 || -z $3 ]]
 then
-	err "Usage: $0 SYNC_ID RSYNC_SRC RSYNC_DST [NOTIFY]" 1>&2
+	err "Usage: $0 SYNC_ID RSYNC_SRC RSYNC_DST" 1>&2
 	exit 1
 fi
 
@@ -19,7 +19,6 @@ fi
 RSYNC_ID=${1}
 RSYNC_SRC=${2}
 RSYNC_DST=${3}
-NOTIFY=${4:-toto}
 LOG=${0}.${1}.log
 LOCK=${0}.${1}.lock
 LAST=${0}.${1}.last

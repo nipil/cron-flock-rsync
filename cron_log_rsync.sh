@@ -76,7 +76,7 @@ fi
 # check activity
 
 cat ${TMP1} | head -n -3 | tail -n +2 | grep -v '^\./$' > ${ACT}
-[[ ${?} -eq 0 ]] || fail "cannot create activity file"
+[[ ${?} -lt 2 ]] || fail "cannot create activity file"
 ACTIVITY=$(cat ${ACT} | wc -l)
 echo "${TIMESTAMP_END}: activity=${ACTIVITY}" > ${LAST}
 
